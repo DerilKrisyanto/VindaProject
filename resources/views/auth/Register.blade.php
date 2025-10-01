@@ -71,7 +71,7 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="relative" id="statusContainer" style="display: none;">
                         <label class="block mb-1 text-sm font-medium text-gray-600">Status Pegawai</label>
                         <select name="objectstatuspegawaifk" id="objectstatuspegawaifk" required
                              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -113,6 +113,7 @@
                         const btn = document.getElementById('dropdownButton');
                         const list = document.getElementById('dropdownList');
                         const tokoContainer = document.getElementById('tokoContainer');
+                        const statusContainer = document.getElementById('statusContainer');
 
                         // Event untuk buka/tutup dropdown saat tombol diklik
                         btn.addEventListener('click', () => {
@@ -134,8 +135,10 @@
                                 const selectedText = this.options[this.selectedIndex].text.toLowerCase();
                                 if (selectedText.includes('spg')) {
                                     tokoContainer.style.display = 'block';
+                                    statusContainer.style.display = 'block';
                                 } else {
                                     tokoContainer.style.display = 'none';
+                                    statusContainer.style.display = 'none';
                                     list.classList.add('hidden');
                                     // reset pilihan checkbox jika ingin
                                     document.querySelectorAll('input[name="toko_id[]"]').forEach(cb => cb.checked = false);

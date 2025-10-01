@@ -73,8 +73,7 @@
 
                     <div class="relative" id="statusContainer" style="display: none;">
                         <label class="block mb-1 text-sm font-medium text-gray-600">Status Pegawai</label>
-                        <select name="objectstatuspegawaifk" id="objectstatuspegawaifk" required
-                             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <select name="objectstatuspegawaifk" id="objectstatuspegawaifk" required disabled>
                             <option value="">--- Pilih Status Pegawai ---</option>
                             @foreach($statuspegawai as $status)
                                 <option value="{{ $status->id }}">{{ $status->statuspegawai }}</option>
@@ -136,11 +135,13 @@
                                 if (selectedText.includes('spg')) {
                                     tokoContainer.style.display = 'block';
                                     statusContainer.style.display = 'block';
+                                    document.getElementById('objectstatuspegawaifk').disabled = false;
                                 } else {
                                     tokoContainer.style.display = 'none';
                                     statusContainer.style.display = 'none';
                                     list.classList.add('hidden');
                                     // reset pilihan checkbox jika ingin
+                                    document.getElementById('objectstatuspegawaifk').disabled = true;
                                     document.querySelectorAll('input[name="toko_id[]"]').forEach(cb => cb.checked = false);
                                 }
                             });

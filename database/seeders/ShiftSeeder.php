@@ -17,6 +17,7 @@ class ShiftSeeder extends Seeder
             ['shift' => 'Pagi', 'statusenabled' => true],
             ['shift' => 'Middle', 'statusenabled' => true],
             ['shift' => 'Siang', 'statusenabled' => true],
+            ['shift' => 'OFF', 'statusenabled' => true],
         ]);
     }
 }

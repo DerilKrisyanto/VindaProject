@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-jadwal-kerja', [JadwalKerjaController::class, 'EditJadwalKerja'])->name('Form.EditJadwalKerja');
     Route::get('/get-spg-by-tanggal/{tanggal}', [JadwalKerjaController::class, 'getSPGbyTanggal']);
     Route::post('/get-toko-shift', [JadwalKerjaController::class, 'getTokoShift']);
-    Route::post('/update-jadwal', [JadwalKerjaController::class, 'updateJadwal'])->name('jadwalkerja.store');
+    // Route::post('/update-jadwal', [JadwalKerjaController::class, 'updateJadwal'])->name('jadwalkerja.store');
 
     // ==================== INPUT SHIFT KERJA ====================
     Route::get('/get-data-shift', [MasterDataController::class, 'getDataShift']);
